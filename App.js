@@ -38,13 +38,37 @@ export default function App()
       </TouchableOpacity>
 
       {searched && 
-      (<Picker
-      style={{width:300}}
-      selectedValue={selected}>
-        <Picker.Item label={maquina[0].descricao} value={maquina[0].patrimonio}/>
-        <Picker.Item label={maquina[1].descricao} value={maquina[1].patrimonio}/>
-        <Picker.Item label={maquina[2].descricao} value={maquina[2].patrimonio}/>
-      </Picker>)}
+      (
+      <>
+      
+      <View style={styles.pickerArea}>
+      <Text style={styles.label}>Equipamento tirado</Text>
+        <View style={styles.picker}>
+          <Picker
+          onValueChange={setSelected}
+          //style={styles.picker}
+          selectedValue={selected}>
+            <Picker.Item label={maquina[0].descricao} value={maquina[0].patrimonio}/>
+            <Picker.Item label={maquina[1].descricao} value={maquina[1].patrimonio}/>
+            <Picker.Item label={maquina[2].descricao} value={maquina[2].patrimonio}/>
+          </Picker>
+        </View>
+
+        <Text style={styles.label}>Novo equipamento</Text>
+        <View style={styles.picker}>
+          <Picker
+          onValueChange={setSelected}
+          //style={styles.picker}
+          selectedValue={selected}>
+            <Picker.Item label={maquina[0].descricao} value={maquina[0].patrimonio}/>
+            <Picker.Item label={maquina[1].descricao} value={maquina[1].patrimonio}/>
+            <Picker.Item label={maquina[2].descricao} value={maquina[2].patrimonio}/>
+          </Picker>
+        </View>
+      </View>
+      </>
+      )}
+
     </View>
   );
 }
@@ -64,7 +88,8 @@ const styles = StyleSheet.create({
   },
   label:{
     fontSize:22,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    color:'#000'
   },
   button:{
     backgroundColor:'#0407ff',
@@ -78,5 +103,17 @@ const styles = StyleSheet.create({
   buttonText:{
     fontSize:18,
     color:'#fff'
+  },
+  picker:{
+    width:'90%',
+    borderWidth:0.2,
+    borderRadius:4,
+    marginBottom:25
+  },
+  pickerArea:{
+    width:'100%',
+    justifyContent:'center',
+    alignItems:'center',
+    marginTop:20
   }
 })
