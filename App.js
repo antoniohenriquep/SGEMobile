@@ -65,6 +65,9 @@ export default function App()
             <Picker.Item label={maquina[2].descricao} value={maquina[2].patrimonio}/>
           </Picker>
         </View>
+        <TouchableOpacity style={styles.button} onPress={}>
+        <Text style={styles.buttonText}>Realizar movimentação</Text>
+      </TouchableOpacity>
       </View>
       </>
       )}
