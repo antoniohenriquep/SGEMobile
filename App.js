@@ -26,6 +26,11 @@ export default function App()
     setSearched(true)
   }
 
+  async function handleSwitchEquip()
+  {
+
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Conjunto</Text>
@@ -65,7 +70,7 @@ export default function App()
             <Picker.Item label={maquina[2].descricao} value={maquina[2].patrimonio}/>
           </Picker>
         </View>
-        <TouchableOpacity style={styles.button} onPress={}>
+        <TouchableOpacity style={styles.button} onPress={handleSwitchEquip}>
         <Text style={styles.buttonText}>Realizar movimentação</Text>
       </TouchableOpacity>
       </View>
