@@ -21,9 +21,14 @@ export default function App()
 
   const [searched, setSearched] = useState(false)
   const [selected,setSelected] = useState(maquina[0].patrimonio)
+
+
   async function handleSearch()
   {
     setSearched(true)
+    /*
+      Faz a pesquisa
+    */
   }
 
   async function handleSwitchEquip()
@@ -51,7 +56,6 @@ export default function App()
         <View style={styles.picker}>
           <Picker
           onValueChange={setSelected}
-          //style={styles.picker}
           selectedValue={selected}>
             <Picker.Item label={maquina[0].descricao} value={maquina[0].patrimonio}/>
             <Picker.Item label={maquina[1].descricao} value={maquina[1].patrimonio}/>
@@ -63,7 +67,6 @@ export default function App()
         <View style={styles.picker}>
           <Picker
           onValueChange={setSelected}
-          //style={styles.picker}
           selectedValue={selected}>
             <Picker.Item label={maquina[0].descricao} value={maquina[0].patrimonio}/>
             <Picker.Item label={maquina[1].descricao} value={maquina[1].patrimonio}/>
